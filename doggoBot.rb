@@ -13,7 +13,7 @@ bot.get_updates(fail_silently: true) do |message|
     message.reply do |reply|
     case command
     when /start/i
-      reply.text = "Wanna doggos? Lemme fetch one for ya!"
+      reply.text = "I've got all the Dogs! Pawsome!"
     else
       result = ""
       resString = JSON.parse(URI.parse("https://dog.ceo/api/breeds/image/random").read)
@@ -23,8 +23,7 @@ bot.get_updates(fail_silently: true) do |message|
         reply.send_with(bot)
         break
       end
-        result += resString["message"] +  "\n"
-      end
+      result = resString["message"]
       reply.text = "#{result}"
     end
     puts "sending #{reply.text.inspect} to @#{message.from.username}"
