@@ -16,8 +16,7 @@ bot.get_updates(fail_silently: true) do |message|
     when /breed/i
       result = ""
       resString = JSON.parse(URI.parse("https://dog.ceo/api/breeds/list/all").read)
-      #p resString["message"].map { |e| e.keys}
-      result = resString["message"]
+      p resString["message"].map { |e| result += e[0] + "\n"}
       reply.text = "#{result}"
     when /random/i
       result = ""
