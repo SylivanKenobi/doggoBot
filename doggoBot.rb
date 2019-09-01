@@ -23,6 +23,11 @@ bot.get_updates(fail_silently: true) do |message|
       resString = JSON.parse(URI.parse("https://dog.ceo/api/breeds/image/random").read)
       result = resString["message"]
       reply.text = "#{result}"
+    when /shibe/i
+      result = ""
+      resString = JSON.parse(URI.parse("http://shibe.online/api/shibes?count=1&urls=true&httpsUrls=true").read)
+      result = resString
+      reply.text = "#{result}"
     else
       result = ""
       begin
