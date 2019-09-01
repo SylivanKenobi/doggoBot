@@ -12,7 +12,7 @@ bot.get_updates(fail_silently: true) do |message|
     message.reply do |reply|
     case command
     when /start/i
-      reply.text = "Pawsome Dogs! Only for you!\n\nText \"breeds\" for all the puppers in our database.\nText your favourite breed name for extra cute pictures.\nText \"random\" for random doggo picture.\nText \"shibe\" for a cute picture of a shiba
+      reply.text = "Pawsome Dogs! Only for you!\n\nText \"breeds\" for all the puppers in our database.\nText your favourite breed name for extra cute pictures.\nText \"random\" for random doggo picture.\nText \"shibe\" for a cute picture of a shiba"
     when /breed/i
       result = ""
       resString = JSON.parse(URI.parse("https://dog.ceo/api/breeds/list/all").read)
